@@ -1,0 +1,11 @@
+{
+  "name": "slack-lab",
+  "version": "1.0.0",
+  "description": "A Playground using the Slack API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luiz Braga",
+  "license": "ISC"
+}
