@@ -4,11 +4,26 @@
   "description": "A Playground using the Slack API",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && cross-env NODE_ENV=test NODE_PATH=./src babel-node node_modules/.bin/tape test/*.api.js test/**/*.api.js | tap-spec",
+    "build": "npm run clean && babel src -d lib",
+    "clean": "rimraf lib/* coverage"
   },
   "author": "Luiz Braga",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.10",
     "slack": "^11.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-istanbul": "^4.1.6",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.1.0",
+    "istanbul": "^0.4.5",
+    "rimraf": "^2.6.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
   }
 }
